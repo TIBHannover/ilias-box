@@ -1,0 +1,13 @@
+---
+
+- name: install ilias
+  become: yes
+  become_user: root
+  git:
+    repo: https://github.com/ILIAS-eLearning/ILIAS.git
+    dest: /var/www/html/ilias
+
+- name: set user rights
+  become: yes
+  become_user: root
+  shell: chown www-data /var/www/html/ilias -R

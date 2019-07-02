@@ -1,0 +1,10 @@
+
+
+- hosts: all
+  roles:
+    - basics
+    - mariadb
+    - apache
+    - php
+    - imageMagick
+    - ilias

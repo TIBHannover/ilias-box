@@ -1,0 +1,7 @@
+---
+
+
+- name: Install Image Magic
+  become: yes
+  apt:
+    name: imagemagick
