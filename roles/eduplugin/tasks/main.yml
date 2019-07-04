@@ -1,7 +1,28 @@
 ---
 
-#clone edu sharing plugin
+- name: install ilias edu sharing plugin
+  become: yes
+  unarchive:
+    src: https://github.com/edu-sharing/plugin-ilias/archive/develop.zip
+    dest: /var/www/html/ilias/
+    remote_src: yes
 
-#https://github.com/edu-sharing/plugin-ilias.git
+- name: move plugin into customizing
+  become: yes
+  command: mv /var/www/html/ilias/plugin-ilias-develop/Customizing/global /var/www/html/ilias/Customizing
+
+- name: set user rights to wwwdata
+  become_user: root
+  become: yes
+  file:
+    path: /var/www/html/ilias/Customizing
+    state: directory
+    recurse: yes
+    owner: www-data
+
+- name: Restart apache2
+  become: yes
+  become_user: root
+  shell: service apache2 restart
 
 #https://github.com/edu-sharing/plugin-ilias/blob/develop/README.md

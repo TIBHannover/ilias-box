@@ -47,8 +47,11 @@
 - name: Install mariadb
   become: yes
   apt:
-    name: mariadb-server
-
+    name: "{{ dbpack }}"
+  vars:
+    dbpack:
+      - mariadb-server
+      - python-mysqldb
 
 
 

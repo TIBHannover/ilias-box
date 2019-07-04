@@ -29,6 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       machine.vm.provision "shell", inline: "sudo timedatectl set-timezone Europe/Amsterdam", run: "always"
       machine.vm.provision "ansible" do |ansible|
           ansible.playbook = "ilias-playbook.yml"
+          ansible.verbose = "vvv"
         end
 
     end

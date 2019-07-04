@@ -1,0 +1,9 @@
+---
+
+- name: copy apache conf
+  become: yes
+  template:
+    src: ../templates/000-default.conf
+    dest: /etc/apache2/sites-available/000-default.conf
+
+
