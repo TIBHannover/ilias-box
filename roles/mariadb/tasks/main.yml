@@ -2,31 +2,20 @@
 
 #create database und tables
 
-- name: Set MariaDB root password for the first time
+- name: Check if root password is set
+  shell: >
+    mysqladmin -u ilias status
+  changed_when: false
+  failed_when: false
+  register: ilias_pwd_check
+
+- name: Set MariaDB useer password for the first time
   become: yes
   become_user: root
   mysql_user:
-    name: root
-    password: "12345678"
-    host_all: yes
-    state: present
-
-- name: Create a new database with name ilias
-  become: yes
-  mysql_db:
     name: ilias
+    password: 12345678
+    priv: '*.*:ALL,GRANT'
     state: present
+  when: ilias_pwd_check.rc == 0
 
-#    CREATE DATABASE ilias CHARACTER SET utf8 COLLATE utf8_general_ci;
-#    CREATE USER 'ilias'@'localhost' IDENTIFIED BY 'password';
-#    GRANT LOCK TABLES on *.* TO 'ilias@localhost';
-#    GRANT ALL PRIVILEGES ON ilias.* TO 'ilias'@'localhost';
-#    FLUSH PRIVILEGES;
-#    exit
-
-#- name: Create a new database with name 'bobdata'
-#  mysql_db:
-#    name: bobdata
-#    state: present
-
-#

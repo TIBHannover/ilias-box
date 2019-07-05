@@ -16,7 +16,13 @@
   become: yes
   file: 'path=/home/vagrant/ilias state=directory owner=www-data'
 
-#- name: Ilias plugin directory
-#  become: yes
-#  file: 'path=/var/www/html/ilias/Customizing/global/plugin state=directory owner=www-data'
+- name: copy php ini
+  become: yes
+  become_user: root
+  become_method: sudo
+  template:
+    src: templates/php.ini
+    dest: /etc/php/7.0/apache2/
+  register: cpphpini
+
 

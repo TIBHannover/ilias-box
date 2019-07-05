@@ -7,9 +7,18 @@
     dest: /var/www/html/ilias/
     remote_src: yes
 
+- name: check plugin exists
+  become: true
+  become_user: root
+  become_method: sudo
+  stat:
+    path: /var/www/html/ilias/plugin-ilias-develop/Customizing/global
+  register: edu
+
 - name: move plugin into customizing
   become: yes
   command: mv /var/www/html/ilias/plugin-ilias-develop/Customizing/global /var/www/html/ilias/Customizing
+  when: edu.stat.exists == False
 
 - name: set user rights to wwwdata
   become_user: root
