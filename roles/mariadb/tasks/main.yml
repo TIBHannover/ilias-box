@@ -2,13 +2,6 @@
 
 #create database und tables
 
-- name: Check if root password is set
-  shell: >
-    mysqladmin -u ilias status
-  changed_when: false
-  failed_when: false
-  register: ilias_pwd_check
-
 - name: Set MariaDB useer password for the first time
   become: yes
   become_user: root
@@ -17,5 +10,4 @@
     password: 12345678
     priv: '*.*:ALL,GRANT'
     state: present
-  when: ilias_pwd_check.rc == 0
 

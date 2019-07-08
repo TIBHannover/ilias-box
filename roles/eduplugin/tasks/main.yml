@@ -12,8 +12,9 @@
   become_user: root
   become_method: sudo
   stat:
-    path: /var/www/html/ilias/plugin-ilias-develop/Customizing/global
+    path: /var/www/html/ilias/Customizing/global/
   register: edu
+
 
 - name: move plugin into customizing
   become: yes
