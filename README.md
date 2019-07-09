@@ -4,16 +4,25 @@ Vagrant - Ansible – Ilias – Edu Sharing
 Installieren von Vagrant
 Die hier gezeigten Installationen beruhen alle auf Ubuntu 18.04. 
 Für Vagrant benötigt man die VirtualBox:
+
+```
 sudo apt-get install virtualbox
 sudo apt install vagrant
+```
+
+
 Installieren von Ansible
 
 Für die Installation von Ansible ist noch ein extra Repository nötig.
 Folgende Kommandos:
+
+```
 sudo apt update
 sudo apt install software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible 
 sudo apt install ansible
+```
+
 
 Installieren von Ilias mit Vagrant
 
@@ -23,7 +32,8 @@ Ilias kann in der Kommandozeile mit dem Befehl sudo vagrant up installiert werde
 
 Reinstallieren mit Vagrant
 Falls Änderungen z.B. an der php.ini gemacht wurden kann man das zum einen als Nutzer vagrant auf der virtuellen Maschine machen oder über den Befehl:
-sudo vagrant reload ilias-box --provision 
+
+`sudo vagrant reload ilias-box --provision `
 
 Konfigurieren von Ilias
 
