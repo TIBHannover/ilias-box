@@ -32,8 +32,7 @@ Ilias kann in der Kommandozeile mit dem Befehl sudo vagrant up installiert werde
 
 Reinstallieren mit Vagrant
 Falls Änderungen z.B. an der php.ini gemacht wurden kann man das zum einen als Nutzer vagrant auf der virtuellen Maschine machen oder über den Befehl:
-
-``sudo vagrant reload ilias-box --provision``
+`sudo vagrant reload ilias-box --provision`
 
 Konfigurieren von Ilias
 
