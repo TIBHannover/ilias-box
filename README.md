@@ -5,8 +5,13 @@
 ## Installieren von Ilias mit Vagrant
 
 Für die Installation muss Git, Vagrant und VirtualBox installiert werden.
-Klonen Sie unter https://git.tib.eu/boxes/ilias-box die Vagrant-Box. Alternativ kann man auch ein Zip-File runterladen und es entpacken. Wechseln Sie in diesen Projektordner.
-Ilias kann in der Kommandozeile mit dem Befehl sudo vagrant up installiert werden. Dieser Vorgang dauert etwa 10 Minuten. 
+Klonen Sie unter 
+'''git https://git.tib.eu/boxes/ilias-box
+cd ilias-box
+vagrant up'''
+
+die Vagrant-Box. Alternativ kann man auch ein Zip-File runterladen und es entpacken. Wechseln Sie in diesen Projektordner.
+Ilias kann in der Kommandozeile mit dem Befehl vagrant up installiert werden. Dieser Vorgang dauert etwa 10 Minuten. 
 Das Ansible-Skript muss nicht extra gestartet werden, dies läuft über die Provision von Vagrant. Ilias wird in der Version 5.2 installiert, da sonst das Edu-Sharing Plug-In nicht funktioniert.
 
 
