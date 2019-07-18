@@ -27,7 +27,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       machine.vm.hostname = name + DOMAIN
       machine.vm.network "private_network",  ip: "192.168.10.5"
       machine.vm.provision "shell", inline: "sudo timedatectl set-timezone Europe/Amsterdam", run: "always"
-      machine.vm.provision "ansible" do |ansible|
+      machine.vm.provision "ansible_local" do |ansible|
+          ansible.install = true
+          ansible.install_mode = "pip"
+          ansible.version = "latest"
+
+          ansible.compatibility_mode = "2.0"
           ansible.playbook = "ansible/ilias-playbook.yml"
           ansible.verbose = "vvv"
         end
