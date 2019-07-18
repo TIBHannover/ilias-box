@@ -32,7 +32,7 @@ Wer sich registrieren möchte kann das in diesem Schritt tun.
 Als letztes zeigt Ilias Ihnen den Default-Login, wenn Sie auf „login“ klicken werden aufgefordert ein neues Passwort zu setzen.
 Danach ist Ilias einsatzbereit.
 
-Konfigurieren von Ilias mit Edu Sharing
+### Konfigurieren von Ilias mit Edu Sharing
 
 Das Edu-Sharing Plug-In liegt in der Version 0.0.6 vor:
 
