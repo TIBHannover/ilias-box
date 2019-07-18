@@ -4,6 +4,7 @@
 
 ## Installieren von Ilias mit Vagrant
 
+Für die Installation muss Git, Vagrant und VirtualBox installiert werden.
 Klonen Sie unter https://git.tib.eu/boxes/ilias-box die Vagrant-Box. Alternativ kann man auch ein Zip-File runterladen und es entpacken. Wechseln Sie in diesen Projektordner.
 Ilias kann in der Kommandozeile mit dem Befehl sudo vagrant up installiert werden. Dieser Vorgang dauert etwa 10 Minuten. 
 Das Ansible-Skript muss nicht extra gestartet werden, dies läuft über die Provision von Vagrant. Ilias wird in der Version 5.2 installiert, da sonst das Edu-Sharing Plug-In nicht funktioniert.
@@ -12,9 +13,9 @@ Das Ansible-Skript muss nicht extra gestartet werden, dies läuft über die Prov
 ## Konfigurieren von Ilias
 
 Als erstes kommt ein Prüffenster, hier sollte alles in Ordnung sein.
-Die Verzeichnisse für die Konfiguration sind bereits durch Ansible erstellt. Im Webmenü müssen diese noch eingetragen werden. Zum einen das Working-Directory /home/vagrant/ilias und /home/vagrant/ilias/ilias.log
-Die Zeitzone sollte Berlin sein, diese kann man einfach auswählen. Der Rest ist voreingestellt. Auf „save“ klicken. Ganz unten ist noch das Master Passwort einzugeben.
-Nun kann man eine beliebige Client-Id vergeben
+Die Verzeichnisse für die Konfiguration sind bereits durch Ansible erstellt. Im Webmenü müssen diese noch eingetragen werden. 
+Zum einen das Working-Directory /home/vagrant/ilias und /home/vagrant/ilias/ilias.log. Die Zeitzone sollte Berlin sein, diese kann man einfach auswählen. 
+Der Rest ist voreingestellt. Auf „save“ klicken. Ganz unten ist noch das Master Passwort einzugeben. Nun kann man eine beliebige Client-Id vergeben
 
 Das Passwort für den Nutzer Ilias ist 12345678, das sollte vor der Installation geändert werden!, d.h. bevor Sie Vagrant starten.
 Nach einem Klick auf „save“ sollte folgendes Fenster erscheinen:
