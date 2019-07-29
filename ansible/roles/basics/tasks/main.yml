@@ -41,7 +41,32 @@
     name: "openjdk-8-jdk"
   when: ansible_distribution != 'Debian' or ansible_lsb.major_release|int < 10
 
-- name: Install php 7.3
+- name: add packages.sury.org/php public_key
+  apt_key:
+    url: https://packages.sury.org/php/apt.gpg
+  when: ansible_distribution == 'Debian'
+
+- name: php - add repository
+  apt_repository:
+    repo: 'deb https://packages.sury.org/php/ {{ansible_distribution_release}} main'
+    filename: php
+    update_cache: yes
+  when: ansible_distribution == 'Debian'
+
+- name: php - install base packages
+  apt:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+      - "php7.0"
+      - "php7.0-gd"
+      - "php7.0-xml"
+      - "php7.0-mysql"
+      - "php7.0-mbstring"
+      - "php7.0-soap"
+  when: ansible_distribution == 'Debian' and ansible_lsb.major_release|int >= 10
+
+- name: Install php
   become: yes
   apt:
     name: "{{ packages }}"
@@ -52,6 +77,8 @@
       - php-xml
       - php-mysql
       - php-mbstring
+      - php-soap
+  when: ansible_distribution != 'Debian' or ansible_lsb.major_release|int < 10
 
 - name: install apache2
   become: yes
