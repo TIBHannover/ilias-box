@@ -35,6 +35,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           ansible.compatibility_mode = "2.0"
           ansible.playbook = "ansible/ilias-playbook.yml"
           ansible.verbose = "vvv"
+          ansible.groups = {
+            "ilias" => [name],
+          }
         end
 
     end
