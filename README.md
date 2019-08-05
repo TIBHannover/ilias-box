@@ -7,7 +7,7 @@
 Für die Installation muss Git, Vagrant und VirtualBox installiert werden.
 Klonen Sie unter 
 ```
-git clone https://git.tib.eu/boxes/ilias-box
+git clone https://github.com/TIBHannover/ilias-box
 cd ilias-box
 vagrant up
 ```
