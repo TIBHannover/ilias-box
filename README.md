@@ -6,9 +6,11 @@
 
 Für die Installation muss Git, Vagrant und VirtualBox installiert werden.
 Klonen Sie unter 
-'''git https://git.tib.eu/boxes/ilias-box
+```
+git clone https://git.tib.eu/boxes/ilias-box
 cd ilias-box
-vagrant up'''
+vagrant up
+```
 
 die Vagrant-Box. Alternativ kann man auch ein Zip-File runterladen und es entpacken. Wechseln Sie in diesen Projektordner.
 Ilias kann in der Kommandozeile mit dem Befehl vagrant up installiert werden. Dieser Vorgang dauert etwa 10 Minuten. 
