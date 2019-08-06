@@ -30,8 +30,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       machine.vm.provision "ansible_local" do |ansible|
           ansible.install = true
           ansible.install_mode = "pip"
-          # fix pip installation
-          ansible.pip_install_cmd = "curl https://bootstrap.pypa.io/get-pip.py | sudo python"
+          # Vagrant 2.2.5: fix pip installation by uncommenting the next line (see https://github.com/hashicorp/vagrant/issues/10950)
+          #ansible.pip_install_cmd = "curl https://bootstrap.pypa.io/get-pip.py | sudo python"
           ansible.version = "latest"
 
           ansible.compatibility_mode = "2.0"
